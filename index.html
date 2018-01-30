@@ -76,6 +76,16 @@
             }
             $( "select" ).change( displayVals );
             displayVals();
+            
+            $("#data-in-but").click(()=>{
+                $("#data-example").data("something", $("#data-inp").val());
+
+            });
+
+            $("#data-but").click(()=>{
+
+                $("#data-example").append("<p>"+$("#data-example").data("something")+"</p>");
+            });
 
         })
     </script>
@@ -170,6 +180,15 @@
       <option>Multiple2</option>
       <option selected="selected">Multiple3</option>
     </select>
+    
+    <h2>Data</h2>
+    <hr class="small" />
+    <h3>so you can ignore scope</h3>
+    <div id="data-example">
+    </div>
+    <input type="text" id="data-inp" />
+    <button id="data-in-but">Put data in</button>
+    <button id="data-but">get data out</button>
 
   </body>
 </html>
